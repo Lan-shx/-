@@ -1,0 +1,27 @@
+{
+  "errors": [],
+  "checks": [
+    "default fixed-size dot comparison separates counts and salary; unknown industry retained; point values match exact group statistics; bubble and box views retained; mobile grids stack"
+  ],
+  "data": [
+    {
+      "name": "未披露",
+      "n": 37517,
+      "p50": 6000,
+      "salaryN": 31196
+    },
+    {
+      "name": "互联网与科技",
+      "n": 3909,
+      "p50": null,
+      "salaryN": 0
+    },
+    {
+      "name": "制造业",
+      "n": 1928,
+      "p50": 7000,
+      "salaryN": 1784
+    }
+  ],
+  "passed": true
+}

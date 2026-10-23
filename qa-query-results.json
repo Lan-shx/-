@@ -1,0 +1,25 @@
+{
+  "checks": [
+    "compare / undo state",
+    "manual filter record identity",
+    "saved query restores jobs and filters",
+    "negative filters shared / retained by advanced form",
+    "experience unlimited excludes missing",
+    "unknown acknowledgement",
+    "editable recognized conditions",
+    "stale scope guard",
+    "requirements route",
+    "major mapping",
+    "empty and salary suppression",
+    "strict salary boundary",
+    "mobile no page overflow",
+    "keyboard input flow"
+  ],
+  "parser": {
+    "total": 150,
+    "passed": 150,
+    "fails": [],
+    "p95": 1
+  },
+  "errors": []
+}

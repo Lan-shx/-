@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "concrete career options apply exact occupation",
+    "no main status or steps",
+    "five distinct defaults and adjacent readings",
+    "map has no top KPIs and city reading updates",
+    "comparison bubble box experience education",
+    "visible concrete jobs tab and 2–3 selection cap",
+    "inline job evidence and full fields",
+    "assistant tools and examples default collapsed",
+    "five mobile routes no overflow"
+  ],
+  "errors": []
+}

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": [
+    "salary slider preserves extremes with no filtering",
+    "selected comparison chips removable",
+    "empty comparison visible",
+    "folded assistant supports local query and evidence"
+  ],
+  "errors": []
+}

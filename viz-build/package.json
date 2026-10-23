@@ -1,0 +1,20 @@
+{
+  "name": "career-redesign-c",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@antv/g-svg": "2.1.1",
+    "@antv/g2": "5.4.8",
+    "@antv/l7": "2.29.1",
+    "@antv/l7-maps": "2.29.1",
+    "esbuild": "0.28.2"
+  }
+}

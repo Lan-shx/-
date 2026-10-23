@@ -1,0 +1,18 @@
+{
+  "testedAt": "2026-10-20T04:00:19.733Z",
+  "passed": true,
+  "scope": "production V20 research API; layout revision not deployed yet",
+  "query": "统计上海会计岗位的记录数和有效月薪样本，并说明局限。",
+  "evidence": [
+    {
+      "ref": "R1",
+      "records": 66,
+      "salaryN": 39,
+      "p50": 7000
+    }
+  ],
+  "limitations": [
+    "One actual model question, not a comprehensive answer-quality benchmark",
+    "No new recruitment collection or real-user usability study"
+  ]
+}

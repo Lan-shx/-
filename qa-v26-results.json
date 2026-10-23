@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "stage and major always visible",
+    "data settings owns active navigation and no advanced filter entry",
+    "single more-filters editor preserves quick draft, applies advanced fields, cancel keeps applied scope",
+    "chart settings explanations and provenance below chart across five sections",
+    "user avatar outside right-aligned bubble; assistant identity and markdown retained; R1 does not jump",
+    "mobile home chat and unified filter drawer fit viewport"
+  ],
+  "errors": [],
+  "passed": true
+}

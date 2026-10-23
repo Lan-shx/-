@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "colors": {
+    "body": "rgb(6, 10, 18)",
+    "side": "rgb(19, 28, 46)",
+    "panel": "rgb(19, 28, 46)",
+    "text": "rgb(234, 240, 250)"
+  },
+  "errors": [],
+  "checks": [
+    "dark palette",
+    "chart axis text",
+    "original comparison",
+    "career/profile",
+    "six-route mobile overflow"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "rows": 69465,
+  "chunksVerified": 14,
+  "duplicateIds": 0,
+  "duplicateCompanyTitleCities": 0,
+  "validMonthlySalaries": 54415,
+  "sourceCount": 9,
+  "coverage": {
+    "from": "2025-10-07",
+    "to": "2026-10-07",
+    "preparedAt": "2026-10-07"
+  },
+  "defaultKnownCityRecords": 53450,
+  "defaultSalaryN": 40782,
+  "defaultSalaryMedian": 6000.0,
+  "limitations": [
+    "Source URLs validated for syntax only; live vacancies not rechecked",
+    "Historical convenience sample; no new collection performed"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "standalone styled geographical SVG",
+      "paths": 77,
+      "fill": "rgb(232, 238, 247)",
+      "stroke": "rgb(184, 198, 218)"
+    },
+    {
+      "name": "full HTML works with network disconnected",
+      "rowCount": 69465,
+      "bytes": 145456327
+    }
+  ],
+  "errors": []
+}

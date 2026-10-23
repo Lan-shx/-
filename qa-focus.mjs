@@ -1,0 +1,16 @@
+import {chromium} from './qa-tools/node_modules/playwright/index.mjs';
+import assert from 'node:assert/strict';
+const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto('http://127.0.0.1:8765');await page.waitForSelector('#market-major',{timeout:60000});
+assert.equal(await page.locator('#market-major option').count(),await page.evaluate(()=>bundle.taxonomy.majors.length+1));
+assert.equal(await page.evaluate(()=>focusedCities.size),40);assert.equal(await page.locator('#market-city option[value="遵义"]').count(),0);
+await page.locator('#market-major').selectOption('市场营销');assert(await page.evaluate(()=>state.filters.major==='市场营销'&&JSON.stringify(state.filters.occupations)===JSON.stringify(bundle.taxonomy.majors.find(m=>m.name==='市场营销').occs)&&filtered.every(r=>state.filters.occupations.includes(r.occupation))));
+assert.equal(await page.locator('#major-select').inputValue(),'市场营销');
+await page.locator('.research-nav [data-view="snapshot"]').click();assert(await page.evaluate(()=>marketUniverse().every(r=>state.filters.occupations.includes(r.occupation))));assert(await page.locator('.matrix-cell').evaluateAll(bs=>bs.every(b=>b.dataset.city!=='遵义')));
+await page.locator('#market-add-compare').click();assert.equal(await page.locator('#market-peer option[value="遵义"]').count(),0);
+await page.locator('[data-scope-more]').click();assert.equal(await page.locator('#city-options [data-multi="cities"][value="遵义"]').count(),0);assert.equal(await page.locator('#major-select').inputValue(),'市场营销');
+await page.locator('#major-select').selectOption('会计学');await page.locator('#filters [type="submit"]').click();assert.equal(await page.locator('#market-major').inputValue(),'会计学');assert(await page.evaluate(()=>filtered.every(r=>state.filters.occupations.includes(r.occupation))));
+await page.locator('#market-reset').click();assert.equal(await page.locator('#market-major').inputValue(),'');assert.equal(await page.evaluate(()=>rows.length),50000);assert(await page.evaluate(()=>rows.some(r=>r.workCities.includes('遵义'))));
+await page.setViewportSize({width:390,height:844});await page.waitForTimeout(200);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert(await page.locator('#market-major').isVisible());assert(await page.locator('[data-scope-more]').evaluate(e=>e.getBoundingClientRect().bottom<innerHeight));await page.screenshot({path:'qa-focus-mobile.png'});
+assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,checks:'40 focus cities; no Zunyi in quick/full/compare/map options; original major options retained and bidirectional mapping synchronized; snapshot respects selected major; reset; original 50000 records preserved; mobile visibility and no overflow',errors}));await browser.close();

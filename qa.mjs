@@ -1,0 +1,46 @@
+import { chromium } from './qa-tools/node_modules/playwright/index.mjs';
+import { readFileSync, mkdirSync } from 'node:fs';
+import assert from 'node:assert/strict';
+const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});
+const page=await browser.newPage({viewport:{width:1440,height:1100},acceptDownloads:true});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.addInitScript(()=>{window.__registered=new Map();Object.defineProperty(document,'modelContext',{value:{registerTool(tool){window.__registered.set(tool.name,tool)}}})});
+await page.goto('http://127.0.0.1:8765/');await page.waitForSelector('#analysis:not([hidden])');
+const raw=JSON.parse(readFileSync('dist/jobs.json','utf8'));
+assert.equal(await page.evaluate(()=>filtered.length),raw.rows.filter(r=>r.country==='中国').length);
+assert.equal(await page.locator('[data-module]').count(),11);
+for(const id of ['S00','S01','S02','S03','S04','S05','S06','S07','S08','S09','S10']){
+ await page.locator(`[data-module="${id}"]`).click();assert(await page.locator('#charts').innerText());
+ if(['S03','S09','S10'].includes(id))assert.match(await page.locator('#charts').innerText(),/数据|快照/);
+}
+await page.locator('[data-module="S00"]').click();
+await page.locator('[name="source"]').selectOption('猎聘');await page.getByRole('button',{name:'应用筛选',exact:true}).click();
+const expected=raw.rows.filter(r=>r.country==='中国'&&r.source==='猎聘');
+assert.equal(await page.evaluate(()=>filtered.length),expected.length);
+const salaries=expected.map(r=>(r.salaryMin+r.salaryMax)/2).sort((a,b)=>a-b);const p=(salaries.length-1)/2;const expectedMedian=salaries[Math.floor(p)]+(salaries[Math.ceil(p)]-salaries[Math.floor(p)])*(p-Math.floor(p));
+assert.equal(await page.evaluate(()=>median(filtered.filter(validSalary).map(midpoint))),expectedMedian);
+await page.screenshot({path:'qa-desktop.png',fullPage:true});
+await page.locator('[data-module="S01"]').click();assert.equal(await page.locator('[name="source"]').inputValue(),'猎聘');
+await page.locator('#question').fill('深圳和杭州的数据分析岗位薪资如何？');await page.locator('#question-form button').click();
+assert.equal(await page.evaluate(()=>state.module),'S01');assert.deepEqual(await page.evaluate(()=>state.filters.cities),['深圳','杭州']);
+assert((await page.locator('#question-result').innerText()).includes('快捷规则'));
+await page.locator('#reset').click();
+await page.locator('[data-detail]').first().click();assert(await page.locator('#detail-dialog').isVisible());assert(await page.locator('#detail-content a').first().getAttribute('href'));
+await page.locator('#detail-content [data-save]').click();await page.locator('#detail-dialog .close-dialog').click();assert.equal(await page.evaluate(()=>saved.size),1);
+await page.locator('[data-compare]').nth(0).check();await page.locator('[data-compare]').nth(1).check();await page.locator('#compare-open').click();assert.equal(await page.locator('.compare-card').count(),2);await page.locator('#info-dialog .close-dialog').click();
+await page.locator('#sources-nav').click();assert((await page.locator('#info-content').innerText()).includes(raw.rows.length.toLocaleString('zh-CN')));await page.locator('#info-dialog .close-dialog').click();
+// Validate WebMCP actions in an instrumented context; actual native support is unavailable.
+assert.equal(await page.evaluate(()=>window.__registered.size),2);
+const before=await page.evaluate(()=>JSON.stringify(state.filters));
+assert.equal(await page.evaluate(()=>{try{window.__registered.get('apply_recruitment_filters').execute({cities:['not-real']});return false}catch{return true}}),true);
+assert.equal(await page.evaluate(()=>JSON.stringify(state.filters)),before);
+const result=await page.evaluate(()=>window.__registered.get('apply_recruitment_filters').execute({keyword:'数据分析',cities:['深圳']}));
+assert.equal(result.count,await page.evaluate(()=>filtered.length));
+assert(result.count>0);await page.locator('#reset').click();
+mkdirSync('qa-downloads',{recursive:true});
+await page.locator('.export-menu summary').click();const csvDownload=page.waitForEvent('download');await page.locator('[data-export="csv"]').click();const csv=await csvDownload;await csv.saveAs('qa-downloads/jobs.csv');assert(readFileSync('qa-downloads/jobs.csv','utf8').includes('原始链接'));
+await page.locator('.export-menu summary').click();const offlineDownload=page.waitForEvent('download');await page.locator('[data-export="offline"]').click();const offline=await offlineDownload;await offline.saveAs('qa-downloads/offline.html');
+const offlinePage=await browser.newPage();offlinePage.on('pageerror',e=>errors.push('offline: '+e.message));await offlinePage.goto('file:///'+process.cwd().replaceAll('\\','/')+'/qa-downloads/offline.html');await offlinePage.waitForSelector('#analysis:not([hidden])');assert.equal(await offlinePage.evaluate(()=>rows.length),raw.rows.length);await offlinePage.close();
+await page.setViewportSize({width:390,height:844});await page.screenshot({path:'qa-mobile.png',fullPage:true});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),true);
+await page.locator('#menu').click();await page.locator('[data-module="S00"]').click();assert.equal(await page.locator('.sidebar').evaluate(el=>el.classList.contains('open')),false);
+assert.deepEqual(errors,[]);await browser.close();console.log(JSON.stringify({status:'passed',modules:11,rows:raw.rows.length,checks:['filter count','salary median','cross-module filters','question rules','details','favorites','compare','sources','WebMCP mock validation','CSV','offline HTML','mobile layout','no runtime errors']}));

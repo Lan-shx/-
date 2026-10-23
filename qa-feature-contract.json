@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "default explorer and preserved taxonomy",
+      "n": 69465,
+      "scope": 53450,
+      "view": "explorer",
+      "majors": 18,
+      "roles": 30
+    },
+    {
+      "name": "local matrix selection then exact drilldown",
+      "role": "27",
+      "city": "广州",
+      "expected": 569
+    },
+    {
+      "name": "major mapping and shared range preserved",
+      "major": "市场营销"
+    },
+    {
+      "name": "display exit preserves filters"
+    },
+    {
+      "name": "immutable complete historical data",
+      "rowCount": 69465,
+      "chunks": 14
+    }
+  ],
+  "errors": []
+}

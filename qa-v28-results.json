@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "each selectable parent immediately followed by its children; parent and individual role both filter correctly",
+    "three common filters visible; only experience education keyword under More; six filter dimensions; draft, group tri-state, city, salary, education, query, apply and reset work",
+    "older imported filters stay explicit and can be cleared; no invisible inherited restriction",
+    "mobile common controls and More fit screen; popovers stay visible; map region shares city picker"
+  ],
+  "errors": [],
+  "passed": true,
+  "group": "AI应用",
+  "members": 7
+}

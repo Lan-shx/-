@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    "draft/apply and independent map/analysis scopes",
+    "five isolated analysis sections",
+    "all six retained salary chart views use readable fixed-size axes",
+    "section-local chart settings retained",
+    "matrix focus and analysis bookmark restores section/options",
+    "career search, master/detail alignment, compare and favorites",
+    "original three comparison axes and six structures; histogram size fixed",
+    "four setting partitions; unsaved changes and explicit persistence",
+    "original real-job compare retained",
+    "five viewport sizes, mobile list/detail return and no document overflow",
+    "map keyboard zoom and reset preserved",
+    "analysis SVG export",
+    "CSV validation preview, cancel safety, explicit apply, dedup and low-n blank"
+  ],
+  "errors": []
+}

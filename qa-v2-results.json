@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    "unchanged data, title-free map, six single-row filters",
+    "draft filters do not recalculate until apply, count matches rows",
+    "initial inheritance followed by independent map/analysis scopes",
+    "matrix focus links analysis, exact intersection, clear restores applied scope",
+    "local statistic switching, lazy charts and advanced six metrics",
+    "analysis favorite restores scope and presentation",
+    "map point/rank linkage, zoom, wheel, drag, keyboard and area selection",
+    "original comparison structure retained, two city evidence table and favorite",
+    "career profile and career favorite",
+    "four favorite types plus job favorites, delete undo and reload persistence",
+    "single-row filters and no page overflow at four widths",
+    "empty results recover without altering source data",
+    "existing CSV export retained"
+  ],
+  "errors": []
+}

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "other": {
+    "rows": 11963,
+    "cities": 207
+  },
+  "checks": [
+    "other city sentinel",
+    "SVG keyboard focus",
+    "three comparison axes and six structures",
+    "analysis restore"
+  ],
+  "errors": []
+}

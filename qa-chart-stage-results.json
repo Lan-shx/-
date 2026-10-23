@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "home": {
+    "height": 47.375,
+    "line": 47.376,
+    "width": 1076,
+    "scroll": 1076
+  },
+  "charts": [
+    {
+      "tab": "demand",
+      "x": 241,
+      "y": 238.796875,
+      "width": 858,
+      "height": 670
+    },
+    {
+      "tab": "salary",
+      "x": 241,
+      "y": 238.796875,
+      "width": 858,
+      "height": 670
+    },
+    {
+      "tab": "opportunity",
+      "x": 241,
+      "y": 238.796875,
+      "width": 858,
+      "height": 670
+    },
+    {
+      "tab": "profile",
+      "x": 241,
+      "y": 238.796875,
+      "width": 858,
+      "height": 670
+    },
+    {
+      "tab": "matrix",
+      "x": 241,
+      "y": 229.796875,
+      "width": 858,
+      "height": 626.1875
+    }
+  ],
+  "errors": []
+}

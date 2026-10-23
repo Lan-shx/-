@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "errors": [],
+  "checks": [
+    "axis names centered",
+    "six salary views",
+    "30 groups scroll without label overlap",
+    "four analysis partitions",
+    "narrow axis density",
+    "mobile back below sticky scope"
+  ]
+}

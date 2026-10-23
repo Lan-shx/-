@@ -1,0 +1,56 @@
+import {chromium} from './qa-tools/node_modules/playwright/index.mjs';
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});
+const page=await browser.newPage({viewport:{width:1440,height:1000},acceptDownloads:true});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+try{
+ // Source overlay lets the still-running preview stay usable during testing.
+ if(!process.env.RESEARCH_BUILT)for(const file of ['research-assistant.js','research-assistant.css'])await page.route('**/'+file,r=>r.fulfill({path:'public/'+file,contentType:file.endsWith('.js')?'text/javascript':'text/css'}));
+ await page.goto('http://127.0.0.1:8765/#assistant');await page.waitForSelector('#ra-input',{timeout:120000});
+ await page.waitForFunction(()=>ResearchAssistant.state.status!==null);
+ assert.equal(await page.locator('#ra-engine').inputValue(),'local');
+ assert.ok(await page.locator('#ra-form button[type=submit]').isEnabled());
+ const examples=await page.evaluate(()=>[...document.querySelectorAll('[data-ra-example]')].map(b=>{const p=ResearchAssistant.localPlan(b.textContent.replace('↗','').trim());return {errors:p.errors,unknown:p.unknown};}));
+ assert.ok(examples.every(p=>!p.errors.length&&!p.unknown.length),JSON.stringify(examples));
+ const send=async q=>{await page.locator('#ra-input').fill(q);await page.locator('#ra-form button[type=submit]').click();await page.waitForFunction(()=>!ResearchAssistant.state.busy)};
+ const original=await page.evaluate(()=>JSON.stringify(state.filters));
+ await send('上海会计月薪1万以上');
+ let last=await page.evaluate(()=>ResearchAssistant.state.results.at(-1));
+ assert.deepEqual(last.filters.cities,['上海']);assert.deepEqual(last.filters.occupations,['16']);assert.equal(last.filters.salaryLow,'10000');
+ await send('把城市换成杭州，其他条件不变');
+ last=await page.evaluate(()=>ResearchAssistant.state.results.at(-1));
+ assert.deepEqual(last.filters.cities,['杭州']);assert.deepEqual(last.filters.occupations,['16']);assert.equal(last.filters.salaryLow,'10000');
+ await send('清除薪资条件');last=await page.evaluate(()=>ResearchAssistant.state.results.at(-1));
+ assert.equal(last.filters.salaryLow,'');assert.deepEqual(last.filters.cities,['杭州']);assert.deepEqual(last.filters.occupations,['16']);
+ const count=await page.locator('.ra-result').count();
+ await send('杭州会计火星远程');assert.equal(await page.locator('.ra-result').count(),count);assert.ok(await page.locator('.ra-error').isVisible());
+ await send('技能要求');assert.equal(await page.locator('.ra-result').count(),count+1);
+ const more=page.locator('[data-ra-more]').last();await more.click();assert.ok((await page.evaluate(()=>ResearchAssistant.state.results.at(-1).jobs.length))>5);
+ const download=page.waitForEvent('download');await page.locator('#ra-export').click();const d=await download;const path=await d.path();const text=await fs.readFile(path,'utf8');assert.ok(text.includes('站内规则查询'));assert.ok(text.includes('岗位查询'));assert.ok(text.includes('http'));
+ assert.equal(await page.evaluate(()=>JSON.stringify(state.filters)),original);
+ await page.locator('#ra-new').click();assert.equal(await page.locator('.ra-result').count(),0);
+ await send('比较深圳和杭州的数据分析薪资');
+ last=await page.evaluate(()=>ResearchAssistant.state.results.at(-1));assert.equal(last.groups.length,2);assert.ok(last.groups.every(g=>g.summary.records>0));
+ await page.screenshot({path:'qa-research-enhanced-desktop.png',fullPage:true});
+ await page.setViewportSize({width:390,height:844});await page.waitForFunction(()=>document.querySelector('#sidebar').getBoundingClientRect().right<=1);
+ await page.locator('#ra-evidence-tab').click();assert.ok(await page.locator('.ra-evidence').isVisible());assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ await page.screenshot({path:'qa-research-enhanced-mobile.png',fullPage:true});
+ await page.locator('#ra-chat-tab').click();
+ await page.locator('#ra-new').click();await send('上海会计');
+ await page.route('**/api/research/status',r=>r.fulfill({json:{ready:true,model:'test',reason:'模拟模型接口，仅测试'}}));
+ await page.locator('#ra-check').click();await page.waitForFunction(()=>ResearchAssistant.state.status.ready);
+ await page.locator('#ra-engine').selectOption('model');
+ await page.route('**/api/research/start',r=>{assert.deepEqual(r.request().postDataJSON().context.filters.occupations,['16']);return r.fulfill({json:{turn:'mock1',status:'tools',calls:[{id:'c1',name:'query',args:{filters:{cities:['杭州']}}}]}})});
+ await page.route('**/api/research/continue',r=>r.fulfill({json:{turn:'mock1',status:'done',answer:'已查询。[R2]'}}));
+ await send('换成杭州');last=await page.evaluate(()=>ResearchAssistant.state.results.at(-1));assert.deepEqual(last.filters.occupations,['16']);assert.deepEqual(last.filters.cities,['杭州']);
+ await page.route('**/api/research/start',r=>r.fulfill({status:409,json:{error:'会话过期，请重新提问'}}));
+ await send('继续');assert.equal(await page.evaluate(()=>ResearchAssistant.state.previous),null);
+ await page.locator('#ra-engine').selectOption('local');await send('薪资分布');assert.equal(await page.locator('.ra-error').count(),0);
+ await page.evaluate(()=>{rows=rows.map(r=>({...r}));rows[0].source='本次导入';});
+ await send('上海会计');assert.match(await page.locator('.ra-error').first().innerText(),/数据已变化/);
+ await page.locator('#ra-new').click();await send('上海会计');assert.ok(await page.locator('.ra-result').count()>0);assert.equal(await page.locator('#ra-consent').count(),0);
+ assert.deepEqual(errors,[]);
+ console.log('PASS enhanced: no-key local queries, inherited filters, clear conditions, unknown rejection, comparison, pagination, export, mobile, incremental model tools, expired context recovery, changed/imported data.');
+}finally{await browser.close();}
+

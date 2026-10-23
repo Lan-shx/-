@@ -1,0 +1,488 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-19T15:53:33.846727+00:00",
+  "title": "Design System: 职业观测站 V2",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "role": "neutral",
+        "displayName": "近黑背景",
+        "tonalRamp": [
+          "oklch(15% 0.0160 261.51)",
+          "oklch(27% 0.0160 261.51)",
+          "oklch(39% 0.0160 261.51)",
+          "oklch(51% 0.0160 261.51)",
+          "oklch(63% 0.0160 261.51)",
+          "oklch(75% 0.0160 261.51)",
+          "oklch(87% 0.0160 261.51)",
+          "oklch(95% 0.0160 261.51)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "深灰表面",
+        "tonalRamp": [
+          "oklch(15% 0.0199 258.35)",
+          "oklch(27% 0.0199 258.35)",
+          "oklch(39% 0.0199 258.35)",
+          "oklch(51% 0.0199 258.35)",
+          "oklch(63% 0.0199 258.35)",
+          "oklch(75% 0.0199 258.35)",
+          "oklch(87% 0.0199 258.35)",
+          "oklch(95% 0.0199 258.35)"
+        ]
+      },
+      "input": {
+        "role": "neutral",
+        "displayName": "输入暗色",
+        "tonalRamp": [
+          "oklch(15% 0.0180 259.71)",
+          "oklch(27% 0.0180 259.71)",
+          "oklch(39% 0.0180 259.71)",
+          "oklch(51% 0.0180 259.71)",
+          "oklch(63% 0.0180 259.71)",
+          "oklch(75% 0.0180 259.71)",
+          "oklch(87% 0.0180 259.71)",
+          "oklch(95% 0.0180 259.71)"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "近白文字",
+        "tonalRamp": [
+          "oklch(15% 0.0092 258.34)",
+          "oklch(27% 0.0092 258.34)",
+          "oklch(39% 0.0092 258.34)",
+          "oklch(51% 0.0092 258.34)",
+          "oklch(63% 0.0092 258.34)",
+          "oklch(75% 0.0092 258.34)",
+          "oklch(87% 0.0092 258.34)",
+          "oklch(95% 0.0092 258.34)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "说明灰",
+        "tonalRamp": [
+          "oklch(15% 0.0241 258.37)",
+          "oklch(27% 0.0241 258.37)",
+          "oklch(39% 0.0241 258.37)",
+          "oklch(51% 0.0241 258.37)",
+          "oklch(63% 0.0241 258.37)",
+          "oklch(75% 0.0241 258.37)",
+          "oklch(87% 0.0241 258.37)",
+          "oklch(95% 0.0241 258.37)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "章节边线",
+        "tonalRamp": [
+          "oklch(15% 0.0285 256.83)",
+          "oklch(27% 0.0285 256.83)",
+          "oklch(39% 0.0285 256.83)",
+          "oklch(51% 0.0285 256.83)",
+          "oklch(63% 0.0285 256.83)",
+          "oklch(75% 0.0285 256.83)",
+          "oklch(87% 0.0285 256.83)",
+          "oklch(95% 0.0285 256.83)"
+        ]
+      },
+      "control-border": {
+        "role": "neutral",
+        "displayName": "控件边线",
+        "tonalRamp": [
+          "oklch(15% 0.0318 255.72)",
+          "oklch(27% 0.0318 255.72)",
+          "oklch(39% 0.0318 255.72)",
+          "oklch(51% 0.0318 255.72)",
+          "oklch(63% 0.0318 255.72)",
+          "oklch(75% 0.0318 255.72)",
+          "oklch(87% 0.0318 255.72)",
+          "oklch(95% 0.0318 255.72)"
+        ]
+      },
+      "primary": {
+        "role": "primary",
+        "displayName": "操作蓝",
+        "tonalRamp": [
+          "oklch(15% 0.2152 262.88)",
+          "oklch(27% 0.2152 262.88)",
+          "oklch(39% 0.2152 262.88)",
+          "oklch(51% 0.2152 262.88)",
+          "oklch(63% 0.2152 262.88)",
+          "oklch(75% 0.2152 262.88)",
+          "oklch(87% 0.2152 262.88)",
+          "oklch(95% 0.2152 262.88)"
+        ]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "悬停操作蓝",
+        "tonalRamp": [
+          "oklch(15% 0.2013 261.37)",
+          "oklch(27% 0.2013 261.37)",
+          "oklch(39% 0.2013 261.37)",
+          "oklch(51% 0.2013 261.37)",
+          "oklch(63% 0.2013 261.37)",
+          "oklch(75% 0.2013 261.37)",
+          "oklch(87% 0.2013 261.37)",
+          "oklch(95% 0.2013 261.37)"
+        ]
+      },
+      "on-primary": {
+        "role": "neutral",
+        "displayName": "按钮白字",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(27% 0.0000 89.88)",
+          "oklch(39% 0.0000 89.88)",
+          "oklch(51% 0.0000 89.88)",
+          "oklch(63% 0.0000 89.88)",
+          "oklch(75% 0.0000 89.88)",
+          "oklch(87% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "chart": {
+        "role": "primary",
+        "displayName": "数据蓝",
+        "tonalRamp": [
+          "oklch(15% 0.1546 257.98)",
+          "oklch(27% 0.1546 257.98)",
+          "oklch(39% 0.1546 257.98)",
+          "oklch(51% 0.1546 257.98)",
+          "oklch(63% 0.1546 257.98)",
+          "oklch(75% 0.1546 257.98)",
+          "oklch(87% 0.1546 257.98)",
+          "oklch(95% 0.1546 257.98)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "焦点浅蓝",
+        "tonalRamp": [
+          "oklch(15% 0.1111 257.14)",
+          "oklch(27% 0.1111 257.14)",
+          "oklch(39% 0.1111 257.14)",
+          "oklch(51% 0.1111 257.14)",
+          "oklch(63% 0.1111 257.14)",
+          "oklch(75% 0.1111 257.14)",
+          "oklch(87% 0.1111 257.14)",
+          "oklch(95% 0.1111 257.14)"
+        ]
+      },
+      "link": {
+        "role": "primary",
+        "displayName": "链接浅蓝",
+        "tonalRamp": [
+          "oklch(15% 0.0765 255.90)",
+          "oklch(27% 0.0765 255.90)",
+          "oklch(39% 0.0765 255.90)",
+          "oklch(51% 0.0765 255.90)",
+          "oklch(63% 0.0765 255.90)",
+          "oklch(75% 0.0765 255.90)",
+          "oklch(87% 0.0765 255.90)",
+          "oklch(95% 0.0765 255.90)"
+        ]
+      },
+      "selected": {
+        "role": "neutral",
+        "displayName": "选中蓝灰",
+        "tonalRamp": [
+          "oklch(15% 0.0585 256.70)",
+          "oklch(27% 0.0585 256.70)",
+          "oklch(39% 0.0585 256.70)",
+          "oklch(51% 0.0585 256.70)",
+          "oklch(63% 0.0585 256.70)",
+          "oklch(75% 0.0585 256.70)",
+          "oklch(87% 0.0585 256.70)",
+          "oklch(95% 0.0585 256.70)"
+        ]
+      },
+      "selected-border": {
+        "role": "neutral",
+        "displayName": "选中边线",
+        "tonalRamp": [
+          "oklch(15% 0.0682 256.70)",
+          "oklch(27% 0.0682 256.70)",
+          "oklch(39% 0.0682 256.70)",
+          "oklch(51% 0.0682 256.70)",
+          "oklch(63% 0.0682 256.70)",
+          "oklch(75% 0.0682 256.70)",
+          "oklch(87% 0.0682 256.70)",
+          "oklch(95% 0.0682 256.70)"
+        ]
+      },
+      "secondary": {
+        "role": "neutral",
+        "displayName": "次级表面",
+        "tonalRamp": [
+          "oklch(15% 0.0255 258.34)",
+          "oklch(27% 0.0255 258.34)",
+          "oklch(39% 0.0255 258.34)",
+          "oklch(51% 0.0255 258.34)",
+          "oklch(63% 0.0255 258.34)",
+          "oklch(75% 0.0255 258.34)",
+          "oklch(87% 0.0255 258.34)",
+          "oklch(95% 0.0255 258.34)"
+        ]
+      },
+      "secondary-hover": {
+        "role": "neutral",
+        "displayName": "悬停表面",
+        "tonalRamp": [
+          "oklch(15% 0.0364 258.32)",
+          "oklch(27% 0.0364 258.32)",
+          "oklch(39% 0.0364 258.32)",
+          "oklch(51% 0.0364 258.32)",
+          "oklch(63% 0.0364 258.32)",
+          "oklch(75% 0.0364 258.32)",
+          "oklch(87% 0.0364 258.32)",
+          "oklch(95% 0.0364 258.32)"
+        ]
+      },
+      "grid": {
+        "role": "neutral",
+        "displayName": "网格暗灰",
+        "tonalRamp": [
+          "oklch(15% 0.0286 256.83)",
+          "oklch(27% 0.0286 256.83)",
+          "oklch(39% 0.0286 256.83)",
+          "oklch(51% 0.0286 256.83)",
+          "oklch(63% 0.0286 256.83)",
+          "oklch(75% 0.0286 256.83)",
+          "oklch(87% 0.0286 256.83)",
+          "oklch(95% 0.0286 256.83)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "headline",
+        "purpose": "页面标题。"
+      },
+      "title": {
+        "displayName": "title",
+        "purpose": "章节标题。"
+      },
+      "subtitle": {
+        "displayName": "subtitle",
+        "purpose": "面板内标题。"
+      },
+      "body": {
+        "displayName": "body",
+        "purpose": "默认正文。"
+      },
+      "control": {
+        "displayName": "control",
+        "purpose": "按钮与输入。"
+      },
+      "metadata": {
+        "displayName": "metadata",
+        "purpose": "图表坐标与证据说明。"
+      },
+      "metric": {
+        "displayName": "metric",
+        "purpose": "分析页数值。"
+      },
+      "map-metric": {
+        "displayName": "map-metric",
+        "purpose": "地图数值。"
+      },
+      "journey-display": {
+        "displayName": "探索首页标题",
+        "purpose": "仅首页 clamp(24px,2.35vw,36px)，900px 以下上限30px，700px 以下26px；桌面单行，手机允许换行。"
+      },
+      "journey-title": {
+        "displayName": "旅程分区标题",
+        "purpose": "旅程分区 18px，不改变既有 title 令牌。"
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "button-background",
+        "value": "background .15s ease",
+        "purpose": "按钮背景状态变化。"
+      },
+      {
+        "name": "navigation-drawer",
+        "value": "transform .18s ease",
+        "purpose": "窄屏侧栏展开。"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1200px"
+      },
+      {
+        "name": "narrow-master-detail",
+        "value": "1024px"
+      },
+      {
+        "name": "navigation-drawer",
+        "value": "850px"
+      },
+      {
+        "name": "single-column",
+        "value": "600px"
+      },
+      {
+        "name": "journey-single-column",
+        "value": "700px"
+      }
+    ],
+    "researchWorkspace": {
+      "updatedAt": "2026-10-20",
+      "desktopToolsWidth": "248px",
+      "gap": "28px",
+      "collapseAt": "1000px",
+      "composerRadius": "12px",
+      "mobileComposerNoteSize": "11px",
+      "marketChildren": "immediately after market parent",
+      "controls": "history and settings aside; conversation and bordered composer in main panel"
+    },
+    "dataExperience": {
+      "updatedAt": "2026-10-20",
+      "states": [
+        "loading",
+        "ready",
+        "error",
+        "ready with no filter matches"
+      ],
+      "evidenceOrder": [
+        "scope",
+        "finding and next steps",
+        "sample statistics",
+        "chart and optional settings"
+      ],
+      "dateSemantics": [
+        "sample inclusion window",
+        "dataset preparation date",
+        "page load completion"
+      ],
+      "actionTarget": "44px minimum",
+      "source": "public/data-experience.js and public/data-experience.css"
+    }
+  },
+  "components": [
+    {
+      "name": "主要按钮",
+      "kind": "button",
+      "description": "紧凑控件尺寸与克制操作层级。",
+      "html": "<button class=\"ds-primary\">应用筛选</button>",
+      "css": ".ds-primary{font-family:\"Segoe UI\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif;font-size:13px;line-height:1.5;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:34px;padding:6px 12px;background:#2563eb;color:#fff;border:1px solid #2563eb;border-radius:6px;font-weight:500;cursor:pointer;transition:background .15s ease}.ds-primary:hover{background:#3478f6}.ds-primary:focus-visible{outline:2px solid var(--cmo-blue,#83b3f7);outline-offset:2px;}.ds-primary:disabled{opacity:.5;cursor:default}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}",
+      "refersTo": "button-primary"
+    },
+    {
+      "name": "次级按钮",
+      "kind": "button",
+      "description": "紧凑控件尺寸与克制操作层级。",
+      "html": "<button class=\"ds-secondary\">加入对比</button>",
+      "css": ".ds-secondary{font-family:\"Segoe UI\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif;font-size:13px;line-height:1.5;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:34px;padding:6px 12px;background:#1c2430;color:var(--text,#e6eaf0);border:1px solid #354151;border-radius:6px;font-weight:500;cursor:pointer;transition:background .15s ease}.ds-secondary:hover{background:#263244}.ds-secondary:focus-visible{outline:2px solid var(--cmo-blue,#83b3f7);outline-offset:2px;}.ds-secondary:disabled{opacity:.5;cursor:default}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}",
+      "refersTo": "button-secondary"
+    },
+    {
+      "name": "文字按钮",
+      "kind": "button",
+      "description": "紧凑控件尺寸与克制操作层级。",
+      "html": "<button class=\"ds-text\">查看数字表</button>",
+      "css": ".ds-text{font-family:\"Segoe UI\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif;font-size:13px;line-height:1.5;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:34px;padding:6px 12px;background:transparent;color:var(--muted,#adb7c6);border:1px solid transparent;border-radius:6px;font-weight:500;cursor:pointer;transition:background .15s ease}.ds-text:hover{background:#202b3b}.ds-text:focus-visible{outline:2px solid var(--cmo-blue,#83b3f7);outline-offset:2px;}.ds-text:disabled{opacity:.5;cursor:default}@media(prefers-reduced-motion:reduce){.ds-text{transition:none}}",
+      "refersTo": "button-text"
+    },
+    {
+      "name": "输入字段",
+      "kind": "input",
+      "description": "暗色输入与清晰焦点。",
+      "html": "<label class=\"ds-label\">搜索职业<input class=\"ds-input\" placeholder=\"输入职业名称\"></label>",
+      "css": ".ds-label{display:grid;gap:5px;font-family:\"Segoe UI\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif;font-size:12px;color:var(--muted,#adb7c6)}.ds-input{font-family:\"Segoe UI\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif;font-size:13px;line-height:1.5;height:34px;padding:6px 10px;background:var(--input,#10151d);color:var(--text,#e6eaf0);border:1px solid #354151;border-radius:6px;caret-color:#83b3f7}.ds-input::placeholder{color:#99a6b8;opacity:1}.ds-input:focus-visible{outline:2px solid var(--cmo-blue,#83b3f7);outline-offset:2px;}",
+      "refersTo": "input"
+    },
+    {
+      "name": "侧栏导航",
+      "kind": "nav",
+      "description": "四个任务入口继承原导航样式；市场分析内保留地图、比较及岗位证据。",
+      "html": "<nav class=\"ds-nav\"><button class=\"ds-nav-item\" aria-current=\"page\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z\"/><path d=\"M9 3v15M15 6v15\"/></svg>职业探索</button></nav>",
+      "css": ".ds-nav{width:176px;background:var(--surface,#151b24)}.ds-nav-item{font-family:\"Segoe UI\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif;font-size:13px;line-height:1.5;display:flex;align-items:center;gap:10px;width:100%;min-height:38px;padding:8px 10px;background:#203552;color:#a5c8f7;border:0;border-radius:6px;box-shadow:inset 0 0 0 1px #354f73;text-align:left;cursor:pointer}.ds-nav-item:hover{background:#202a38}.ds-nav-item:focus-visible{outline:2px solid var(--cmo-blue,#83b3f7);outline-offset:2px;}",
+      "refersTo": "navigation-active"
+    },
+    {
+      "name": "任务分区",
+      "kind": "nav",
+      "description": "平直文字分区与下沿蓝线。",
+      "html": "<nav class=\"ds-tabs\" role=\"tablist\"><button class=\"ds-tab\" role=\"tab\" aria-selected=\"true\">市场需求</button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\">薪资分析</button></nav>",
+      "css": ".ds-tabs{display:flex;gap:24px;border-bottom:1px solid var(--border,#2b3543);overflow-x:auto;min-height:44px;background:var(--canvas,#0c1017)}.ds-tab{font-family:\"Segoe UI\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif;font-size:13px;line-height:1.5;position:relative;border:0;border-radius:0;background:transparent;color:var(--muted,#adb7c6);padding:10px 0 11px;white-space:nowrap;font-weight:500;cursor:pointer}.ds-tab[aria-selected=true]{color:#a5c8f7}.ds-tab[aria-selected=true]:after{content:\"\";position:absolute;bottom:0;left:0;right:0;height:2px;background:#5797f5}.ds-tab:hover{color:var(--text,#e6eaf0)}.ds-tab:focus-visible{outline:2px solid var(--cmo-blue,#83b3f7);outline-offset:2px;}"
+    },
+    {
+      "name": "章节面板",
+      "kind": "card",
+      "description": "原分析页 16px 标题继续保留；旅程分区标题另为 18px。",
+      "html": "<section class=\"ds-panel\"><h2 class=\"ds-title\">薪资水平与分布</h2><p class=\"ds-note\">有效月薪样本与当前筛选范围。</p></section>",
+      "css": ".ds-panel{background:var(--surface,#151b24);color:var(--text,#e6eaf0);border:1px solid var(--border,#2b3543);border-radius:8px;padding:18px 20px;font-family:\"Segoe UI\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif}.ds-title{margin:0 0 12px;font-size:16px;font-weight:600;line-height:1.5}.ds-note{margin:10px 0;font-size:12px;line-height:1.7;color:var(--muted,#adb7c6)}",
+      "refersTo": "panel"
+    },
+    {
+      "name": "职业列表行",
+      "kind": "custom",
+      "description": "紧凑主从列表中的可选职业。",
+      "html": "<button class=\"ds-career\" aria-pressed=\"true\"><span><b class=\"ds-career-name\">产品经理</b><small class=\"ds-career-note\">招聘要求与真实岗位</small></span><span class=\"ds-career-count\">样本记录</span></button>",
+      "css": ".ds-career{font-family:\"Segoe UI\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif;font-size:13px;line-height:1.5;display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;min-height:70px;padding:12px 8px;background:transparent;color:var(--text,#e6eaf0);border:1px solid transparent;border-bottom-color:var(--border,#2b3543);border-radius:0;text-align:left;cursor:pointer}.ds-career:hover{background:#1b2533}.ds-career[aria-pressed=true]{background:#203552;border-color:#354f73;border-radius:6px}.ds-career-name{display:block;font-size:13px;font-weight:500;line-height:1.5}.ds-career-note{display:block;margin-top:4px;font-size:12px;color:var(--muted,#adb7c6)}.ds-career-count{font-size:12px;color:var(--muted,#adb7c6);white-space:nowrap}.ds-career:focus-visible{outline:2px solid var(--cmo-blue,#83b3f7);outline-offset:2px;}"
+    },
+    {
+      "name": "分类切换",
+      "kind": "chip",
+      "description": "收藏中的小型选中分类。",
+      "html": "<button class=\"ds-category\" aria-pressed=\"true\">职业</button>",
+      "css": ".ds-category{font-family:\"Segoe UI\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif;font-size:13px;line-height:1.5;border:0;border-radius:6px;background:transparent;color:var(--muted,#adb7c6);padding:7px 12px;white-space:nowrap;cursor:pointer}.ds-category[aria-pressed=true]{background:#203552;color:#a5c8f7}.ds-category:hover{background:#202a38}.ds-category:focus-visible{outline:2px solid var(--cmo-blue,#83b3f7);outline-offset:2px;}"
+    },
+    {
+      "name": "图表与证据",
+      "kind": "custom",
+      "description": "共享蓝色系列与固定说明字号。",
+      "html": "<section class=\"ds-chart\"><svg class=\"ds-chart-svg\" viewBox=\"0 0 300 220\" role=\"img\" aria-label=\"蓝色图表示意\"><path d=\"M55 20v160h215M55 70h215M55 125h215\" stroke=\"#293341\" fill=\"none\"/><path d=\"M56 40h160v16H56zm0 50h120v16H56zm0 50h85v16H56z\" fill=\"#5797f5\"/><text x=\"55\" y=\"204\" fill=\"#adb7c6\" font-size=\"12\">记录数</text></svg><p class=\"ds-chart-note\">单位与分母紧邻图表；示意数据不作为产品证据。</p></section>",
+      "css": ".ds-chart{background:var(--surface,#151b24);color:var(--text,#e6eaf0);font-family:\"Segoe UI\", \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif}.ds-chart-svg{display:block;width:100%;height:320px}.ds-chart-note{margin:10px 0;font-size:12px;line-height:1.7;color:var(--muted,#adb7c6)}",
+      "refersTo": "chart"
+    },
+    {
+      "name": "研究区折叠层",
+      "kind": "custom",
+      "description": "历史、范围和证据按需展开；对话为中心，输入区底部黏附。",
+      "html": "<details class=\"ds-research-fold\"><summary>查看本次研究范围</summary><p>当前条件与研究对象</p></details><form class=\"ds-research-composer\"><label>输入研究问题<textarea placeholder=\"例如：解释这个方向的技能要求\"></textarea></label></form>",
+      "css": ".ds-research-fold{font-family:\"Segoe UI\",\"Microsoft YaHei UI\",sans-serif;color:var(--text,#e6eaf0);border-bottom:1px solid #354151}.ds-research-fold summary{cursor:pointer;padding:12px 0;min-height:44px;color:#a5c8f7}.ds-research-fold summary:hover{color:var(--text,#e6eaf0)}.ds-research-fold summary:focus-visible,.ds-research-composer textarea:focus-visible{outline:2px solid #83b3f7;outline-offset:2px}.ds-research-composer{position:sticky;bottom:8px;background:#0c1017;padding:12px 0;border-top:1px solid #354151;color:var(--text,#e6eaf0)}.ds-research-composer textarea{display:block;min-height:90px;width:100%;background:#10151d;color:#e6eaf0;border:1px solid #354151;border-radius:6px;font:inherit}@media(max-width:850px){.ds-research-composer{bottom:0}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "紧凑深色研究工作台",
+    "overview": "以近黑底色、深灰工作区域、近白文字与蓝色操作建立统一的研究界面。普通产品密度优先，标题、表单、数字和来源说明采用紧凑而明确的尺度；边线组织内容，蓝色表示操作、选择与数据。视觉参考不提供本产品的文案或功能。\n\n当前实现以 public/workbench-system.css、public/workbench-layout.js 及局部扩展 public/career-journey.js/css 为准，产品权威为 [PRODUCT-JOURNEY.md](PRODUCT-JOURNEY.md)，未冲突能力继承 PRODUCT-V2.md。此文件记录已批准的视觉系统与现有布局表达；旧样式、错位和溢出不构成新规范。",
+    "keyCharacteristics": [
+      "近黑背景与深灰平面表面。",
+      "紧凑标题、控件和相邻证据说明。",
+      "蓝色操作与单色系数据表达。",
+      "细边线、小圆角、明确键盘焦点。",
+      "任务分区与职业主从布局。"
+    ],
+    "rules": [
+      {
+        "name": "The Blue State Rule",
+        "body": "蓝色用于可操作状态、焦点与数据；常规区域保持中性暗色，不用额外彩色面板建立层级。",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do 使用当前颜色、字号和圆角令牌。",
+      "Do 使用细边线和表面差异组织层级，保持常规容器平面。",
+      "Do 保持图表坐标和证据说明可读，使用固定说明字号。",
+      "Do 在窄屏让筛选、表格和矩阵在自身容器内滚动。",
+      "Do 保留对比分析原有结构，用共享图表主题保持一致。"
+    ],
+    "donts": [
+      "Don't 复制参考界面的文案、数据或功能。",
+      "Don't 引入大幅宣传区域、玻璃、发光、彩色卡片或成片阴影。",
+      "Don't 将探索首页 display 扩散到分析页；保留原分析标题、指标和坐标尺度，不恢复高圆角容器。",
+      "Don't 将不可计算的指标渲染成空白大图或虚构数据。",
+      "Don't 把局部错位、旧配色或横向溢出写成设计规则。"
+    ]
+  }
+}

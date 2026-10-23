@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "broad direction selects every member and real sample count; one filter entry applies city and salary; cancel keeps applied scope",
+    "specific role narrows correctly; group and role share one selector; remembered group and role survive reload; stage and major stay visible",
+    "mobile layouts and full filter editor fit viewport; map selection opens same editor"
+  ],
+  "errors": [],
+  "passed": true,
+  "group": "AI应用",
+  "memberCount": 7,
+  "sample": 2230
+}

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "checks": [
+    "comparison redundant heading removed",
+    "job row comparison labels and sticky primary action",
+    "selected jobs transferred into full comparison",
+    "independent history and settings",
+    "full width naturally expanded answer",
+    "separate evidence expandable",
+    "mobile routes have no horizontal overflow"
+  ],
+  "dimensions": {
+    "height": 350,
+    "scroll": 350,
+    "overflow": "visible",
+    "width": 1192,
+    "chat": 1192,
+    "available": 1192
+  },
+  "errors": []
+}

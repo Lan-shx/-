@@ -1,0 +1,119 @@
+Bundled license information:
+
+@antv/g-math/dist/index.esm.js:
+  /*!
+   * @antv/g-math
+   * @description Geometry util
+   * @version 3.1.0
+   * @date 12/22/2025, 3:02:36 AM
+   * @author AntVis
+   * @docs https://g.antv.antgroup.com/
+   */
+
+@babel/runtime/helpers/esm/regenerator.js:
+  /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */
+
+@antv/g-lite/dist/index.esm.js:
+  /*!
+   * @antv/g-lite
+   * @description A core module for rendering engine implements DOM API.
+   * @version 2.7.0
+   * @date 12/24/2025, 11:55:20 AM
+   * @author AntVis
+   * @docs https://g.antv.antgroup.com/
+   */
+
+html2canvas/dist/html2canvas.js:
+  /*!
+   * html2canvas 1.4.1 <https://html2canvas.hertzen.com>
+   * Copyright (c) 2022 Niklas von Hertzen <https://hertzen.com>
+   * Released under MIT License
+   */
+  /*! *****************************************************************************
+      Copyright (c) Microsoft Corporation.
+  
+      Permission to use, copy, modify, and/or distribute this software for any
+      purpose with or without fee is hereby granted.
+  
+      THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+      REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+      AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+      INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+      LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+      OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+      PERFORMANCE OF THIS SOFTWARE.
+      ***************************************************************************** */
+
+@antv/g/dist/index.esm.js:
+  /*!
+   * @antv/g
+   * @description A core module for rendering engine implements DOM API.
+   * @version 6.3.1
+   * @date 12/24/2025, 11:55:39 AM
+   * @author AntVis
+   * @docs https://g.antv.antgroup.com/
+   */
+
+@antv/g-canvas/dist/index.esm.js:
+  /*!
+   * @antv/g-canvas
+   * @description A renderer implemented by Canvas 2D API
+   * @version 2.2.0
+   * @date 12/24/2025, 11:55:53 AM
+   * @author AntVis
+   * @docs https://g.antv.antgroup.com/
+   */
+
+@antv/g-plugin-dragndrop/dist/index.esm.js:
+  /*!
+   * @antv/g-plugin-dragndrop
+   * @description A G plugin for Drag n Drop implemented with PointerEvents
+   * @version 2.1.1
+   * @date 12/24/2025, 11:56:44 AM
+   * @author AntVis
+   * @docs https://g.antv.antgroup.com/
+   */
+
+@antv/g-svg/dist/index.esm.js:
+  /*!
+   * @antv/g-svg
+   * @description A renderer implemented by SVG
+   * @version 2.1.1
+   * @date 12/24/2025, 11:57:09 AM
+   * @author AntVis
+   * @docs https://g.antv.antgroup.com/
+   */
+
+ieee754/index.js:
+  /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+hammerjs/hammer.js:
+  /*! Hammer.JS - v2.0.7 - 2016-04-22
+   * http://hammerjs.github.io/
+   *
+   * Copyright (c) 2016 Jorik Tangelder;
+   * Licensed under the MIT license */
+
+polygon-clipping/dist/polygon-clipping.umd.js:
+  /**
+   * splaytree v3.1.2
+   * Fast Splay tree for Node and browser
+   *
+   * @author Alexander Milevski <info@w8r.name>
+   * @license MIT
+   * @preserve
+   */
+  /*! *****************************************************************************
+      Copyright (c) Microsoft Corporation. All rights reserved.
+      Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+      this file except in compliance with the License. You may obtain a copy of the
+      License at http://www.apache.org/licenses/LICENSE-2.0
+  
+      THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+      KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+      WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+      MERCHANTABLITY OR NON-INFRINGEMENT.
+  
+      See the Apache Version 2.0 License for specific language governing permissions
+      and limitations under the License.
+      ***************************************************************************** */

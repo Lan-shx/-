@@ -1,0 +1,1 @@
+(function(){const base=render;render=function(){base();if(journeyView!=='assistant'){document.getElementById('assistant-history-dock')?.remove();document.getElementById('ra-evidence-panel')?.remove();}document.body.classList.toggle('assistant-chat-window',journeyView==='assistant');};})();

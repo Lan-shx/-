@@ -1,0 +1,16 @@
+import {chromium} from './qa-tools/node_modules/playwright/index.mjs';
+import assert from 'node:assert/strict';
+const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});
+const page=await browser.newPage({viewport:{width:390,height:844},acceptDownloads:true});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto('http://127.0.0.1:8765');await page.waitForSelector('.market-matrix',{timeout:60000});
+assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+assert(await page.locator('[data-scope-more]').evaluate(el=>{const r=el.getBoundingClientRect();return r.bottom<innerHeight&&r.bottom<=el.closest('#global-scope').getBoundingClientRect().bottom}));
+await page.screenshot({path:'qa-research-mobile-viewport.png'});
+assert(await page.evaluate(()=>mainSVG.startsWith('<svg')&&mainSVG.includes('招聘记录数')));
+await page.setViewportSize({width:1440,height:1000});
+await page.locator('[data-market-structure="industry"]').click();const bar=page.locator('[data-drill-city] .research-bar').last();const city=await bar.evaluate(e=>e.closest('[data-drill-city]').dataset.drillCity);const value=await bar.getAttribute('data-value');await bar.click();assert(await page.evaluate(({city,value})=>state.filters.cities[0]===city&&state.filters.industries[0]===value&&filtered.every(r=>r.workCities.includes(city)&&r.industry===value),{city,value}));
+await page.locator('#market-reset').click();await page.locator('[data-view="explorer"]').first().click();
+const download=page.waitForEvent('download');await page.evaluate(()=>exportOffline());await(await download).saveAs('qa-downloads/research-offline.html');
+const offline=await browser.newPage();offline.on('pageerror',e=>errors.push(e.message));await offline.goto('file:///'+process.cwd().replaceAll('\\','/')+'/qa-downloads/research-offline.html#explorer');await offline.waitForSelector('.market-matrix');assert.equal(await offline.evaluate(()=>rows.length),50000);
+assert.equal(await offline.locator('.research-nav>button').count(),4);assert(await offline.locator('#market-role').isVisible());
+assert.deepEqual(errors,[]);console.log(JSON.stringify({passed:true,checks:'mobile all-filter button fully visible; no overflow; matrix SVG; exact compared-city industry drill; complete offline export with 50000 original records',errors}));await browser.close();

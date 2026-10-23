@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "checks": [
+    "two separate saved conversations and switch restoration",
+    "search plus conversation action menus",
+    "citation opens evidence panel without page or message scrolling",
+    "wide chat viewport and composer remain visible",
+    "history and evidence cleaned up on exit",
+    "mobile conversation list selection and full screen evidence"
+  ],
+  "dims": {
+    "height": 637,
+    "overflow": "auto",
+    "width": 1192,
+    "formY": 888,
+    "window": 900
+  },
+  "before": {
+    "page": 0,
+    "messages": 0
+  },
+  "after": {
+    "page": 0,
+    "messages": 0
+  },
+  "errors": []
+}

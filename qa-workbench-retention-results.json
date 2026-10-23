@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": [
+    "direct section links, salary quantiles, blue heat scale and stable focused matrix",
+    "other mainland city sentinel preserved",
+    "complete desktop surfaces captured without transient overlays",
+    "analysis config and collection backup round trips",
+    "full offline HTML embeds unchanged data, new CSS and all research sections",
+    "saved starting-page preference honored on reload",
+    "mobile surfaces and 125-percent display scaling"
+  ],
+  "errors": []
+}

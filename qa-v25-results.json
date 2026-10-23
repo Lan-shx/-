@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "fixtureNote": "Formatting fixture built from real local query; not a model-response quality claim",
+  "fixture": {
+    "skills": [
+      {
+        "name": "沟通协作",
+        "n": 714
+      },
+      {
+        "name": "英语",
+        "n": 142
+      },
+      {
+        "name": "数据分析",
+        "n": 137
+      },
+      {
+        "name": "Excel",
+        "n": 114
+      },
+      {
+        "name": "AI",
+        "n": 55
+      }
+    ],
+    "n": 3292
+  },
+  "widthOpen": 944,
+  "safety": {
+    "scripts": 0,
+    "images": 0,
+    "badLinks": 0,
+    "code": 1,
+    "codeRefButtons": 0,
+    "unknown": true
+  },
+  "checks": [
+    "history inside assistant and separate from global navigation",
+    "history collapse expands answer",
+    "Markdown headings emphasis lists and semantic table",
+    "assistant and user identity avatars",
+    "saved answer rerenders with formatting",
+    "citation side panel does not scroll chat",
+    "unsafe HTML and protocols blocked; no remote images",
+    "mobile history opens independently and composer remains visible"
+  ],
+  "errors": []
+}

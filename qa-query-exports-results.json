@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "mobile sidebar closed and query visible",
+    "filtered CSV includes same records and exclusion provenance",
+    "offline HTML embeds new engine and executes comparisons",
+    "import invalidates preview, refreshes dictionary and labels provenance",
+    "experience predicates respect unknown and minimum"
+  ],
+  "errors": []
+}

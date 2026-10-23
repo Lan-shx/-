@@ -1,0 +1,63 @@
+import {chromium} from './qa-tools/node_modules/playwright/index.mjs';
+import assert from 'node:assert/strict';
+const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+try{
+ await page.goto('http://127.0.0.1:8765/#assistant');
+ await page.waitForSelector('#ra-input',{timeout:120000});
+ await page.waitForFunction(()=>ResearchAssistant.state.status!==null);
+ assert.match(await page.locator('.ra-service').innerText(),/尚未配置密钥/);
+ assert.ok(await page.locator('#ra-form button[type=submit]').isEnabled());
+ const result=await page.evaluate(()=>{
+  const a=ResearchAssistant,a0=JSON.stringify(state.filters);
+  const q=a.execute('query',{filters:{cities:['上海'],occupations:['16']},limit:5});
+  const n=rows.filter(r=>matches(r,{...defaultFilters(),cities:['上海'],occupations:['16']})).length;
+  if(q.summary.records!==n)throw Error('query count mismatch');
+  const compare=a.execute('compare',{filters:{occupations:['16']},dimension:'cities',values:['上海','杭州']});
+  if(compare.groups[0].summary.records!==n)throw Error('comparison differs');
+  if(a.summary(rows.filter(validSalary).slice(0,9)).p50!==null)throw Error('small sample leaked');
+  let caught=0;for(const filter of [{cities:['假城市']},{salaryLow:-1},{salaryLow:20000,salaryHigh:10000},{delete:true}])try{a.validate(filter)}catch{caught++}
+  if(caught!==4)throw Error('validation');
+  if(JSON.stringify(state.filters)!==a0)throw Error('workbench changed');
+  const evidence=a.execute('evidence',{ids:[q.jobs[0].id]});if(evidence.jobs[0].id!==q.jobs[0].id)throw Error('evidence mismatch');
+  return {records:q.summary.records,salaryN:q.summary.salaryN,comparison:compare.groups.map(g=>({name:g.name,n:g.summary.records})),url:q.jobs[0].url};
+ });
+ assert.notEqual(result.url,'#');
+ await page.locator('#ra-new').click();
+ await page.screenshot({path:'qa-research-empty.png',fullPage:true});
+ let turn=0;
+ await page.route('**/api/research/status',r=>r.fulfill({json:{ready:true,model:'test-adapter',reason:'仅测试连接'}}));
+ await page.route('**/api/research/start',async route=>{
+  const body=route.request().postDataJSON();if(turn>0)assert.equal(body.previous,'test-turn');
+  await route.fulfill({json:{turn:'test-turn',status:'tools',calls:[{id:'q',name:'query',args:{filters:{cities:[turn++?'杭州':'上海'],occupations:['16']}}}]}});
+ });
+ await page.route('**/api/research/continue',async route=>{const body=route.request().postDataJSON();assert.ok(body.results[0].result.summary.records>0);await route.fulfill({json:{turn:'test-turn',status:'done',answer:'已按相同口径查询，请核对依据 ['+body.results[0].result.ref+']。\n<script>alert(1)</script>'}})});
+ await page.locator('#ra-check').click();await page.waitForFunction(()=>ResearchAssistant.state.status.ready);
+ await page.locator('#ra-engine').selectOption('model');
+ await page.locator('#ra-input').fill('查询上海会计岗位');await page.locator('#ra-form button[type=submit]').click();
+ await page.waitForSelector('.ra-message.assistant');
+ assert.equal(await page.locator('.ra-result').count(),1);
+ assert.equal(await page.locator('.ra-answer script').count(),0);
+ await page.locator('#ra-input').fill('换成杭州');await page.locator('#ra-form button[type=submit]').click();
+ await page.waitForFunction(()=>ResearchAssistant.state.messages.filter(m=>m.role==='assistant').length===2);
+ assert.equal(await page.locator('.ra-result').count(),2);
+ await page.locator('.ra-ref').last().click();
+ assert.equal(await page.locator('.ra-ref').count(),2);
+ await page.screenshot({path:'qa-research-results.png',fullPage:true});
+ const workbenchBefore=await page.evaluate(()=>JSON.stringify(state.filters));
+ await page.locator('[data-v2-route="analysis"]').click();await page.locator('[data-v2-route="assistant"]').click();
+ assert.equal(await page.locator('.ra-message.assistant').count(),2);
+ assert.equal(await page.evaluate(()=>JSON.stringify(state.filters)),workbenchBefore);
+ await page.setViewportSize({width:390,height:844});
+ await page.waitForFunction(()=>document.querySelector('#sidebar').getBoundingClientRect().right<=1);
+ await page.locator('#ra-chat-tab').click();
+ await page.screenshot({path:'qa-research-mobile.png',fullPage:true});
+ await page.locator('#ra-evidence-tab').click();assert.ok(await page.locator('.ra-evidence').isVisible());
+ await page.locator('#ra-chat-tab').click();assert.ok(await page.locator('#ra-input').isVisible());
+ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ await page.locator('#ra-menu').click();assert.ok(await page.locator('#sidebar').evaluate(e=>e.classList.contains('open')));
+ await page.locator('[data-v2-route="assistant"]').click();
+ assert.deepEqual(errors,[]);
+ console.log('PASS browser: unavailable state, filters, counts, comparison, n<10, evidence, multi-turn mock, safe rendering, navigation, mobile.',JSON.stringify(result));
+}finally{await browser.close();}

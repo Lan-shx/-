@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "industry cell exact count and drill",
+      "expected": 8099,
+      "role": "27",
+      "industry": "未披露"
+    },
+    {
+      "name": "comparison all six structures",
+      "axis": "occupation",
+      "choices": [
+        "27",
+        "16"
+      ]
+    },
+    {
+      "name": "comparison all six structures",
+      "axis": "city",
+      "choices": [
+        "广州",
+        "北京"
+      ]
+    },
+    {
+      "name": "comparison all six structures",
+      "axis": "industry",
+      "choices": [
+        "未披露",
+        "互联网与科技"
+      ]
+    },
+    {
+      "name": "legacy six metrics and six salary charts preserved"
+    },
+    {
+      "name": "favorite and two real-job comparison",
+      "id": "edcdb5c82b8127a9"
+    },
+    {
+      "name": "local plan persistence and Markdown export"
+    },
+    {
+      "name": "filtered CSV and configuration exports"
+    },
+    {
+      "name": "filtered-empty recovery"
+    },
+    {
+      "name": "CSV session import and low salary sample null",
+      "originalId": "b170cbb3cf393b44"
+    }
+  ],
+  "errors": []
+}

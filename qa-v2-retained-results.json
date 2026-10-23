@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "errors": [],
+  "checks": [
+    "six legacy chart views",
+    "unified career compare",
+    "real-job compare",
+    "offline export/load",
+    "session CSV import"
+  ]
+}

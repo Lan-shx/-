@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": 21,
+  "independentStatistics": {
+    "n": 53450,
+    "salaryN": 40782,
+    "p50": 6000
+  },
+  "loadingAndIntegrityRetry": true,
+  "researchClosure": true,
+  "errors": []
+}

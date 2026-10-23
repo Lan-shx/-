@@ -1,0 +1,202 @@
+/* A short headline on home; a large visual canvas in the analysis workspace. */
+body.workbench-v2 .journey-home .journey-intro h1{font-size:clamp(24px,2.35vw,36px)!important;line-height:1.4!important;letter-spacing:-.025em!important;white-space:nowrap}
+.journey-intro h1 span{color:#a5c8f7}
+body.market-canvas #data-status-summary,body.market-canvas #query-workbench:not(.chart-query-open){display:none!important}
+body.market-canvas .workbench-heading{min-height:50px;padding:8px 0}
+body.market-canvas .workbench-tabs{min-height:44px;margin-bottom:16px}
+body.market-canvas .workbench-tabs button{padding-top:8px;padding-bottom:9px}
+body.market-canvas .market-stage{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:20px;align-items:start;min-width:0}
+body.market-canvas .market-stage>.workbench-panel{margin:0!important;padding:16px!important;min-width:0}
+body.market-canvas .workbench-panel-heading{align-items:center;gap:12px;min-height:40px;margin-bottom:0}
+body.market-canvas .workbench-panel-heading h2{font-size:16px!important;margin:0!important;margin-right:auto}
+.chart-view-picker{white-space:nowrap;flex-shrink:0;display:flex!important;align-items:center;gap:8px;color:#adb7c6;font-size:12px;min-width:0!important}
+.chart-view-picker select{min-width:120px!important;max-width:180px}
+body.workbench-v2.market-canvas #explorer-chart.stage-chart{height:calc(100dvh - 230px)!important;min-height:380px!important;max-height:780px!important;margin:8px 0!important;overflow:hidden}
+body.market-canvas .workbench-chart-frame{height:calc(100dvh - 230px);min-height:380px;max-height:780px;overflow:auto}
+body.market-canvas #analysis-matrix .v2-matrix-wrap{max-height:calc(100dvh - 230px);min-height:380px;overflow:auto}
+.chart-aside{padding:4px 0;min-width:0}
+.chart-aside>h2{display:flex;align-items:center;gap:8px;font-size:16px!important;margin:0 0 18px!important}
+.chart-aside>h2 svg{color:#83b3f7;flex-shrink:0}
+body.market-canvas .chart-aside .workbench-stats{display:block;padding:0;margin:0 0 20px}
+body.market-canvas .chart-aside .workbench-stats>div{display:grid;grid-template-columns:1fr auto;gap:4px 12px;border-right:0;border-bottom:1px solid #2b3543;padding:8px 0}
+body.market-canvas .chart-aside .workbench-stats dt{align-content:center}
+body.market-canvas .chart-aside .workbench-stats dd{font-size:22px!important;margin:0;text-align:right}
+body.market-canvas .chart-aside .workbench-stats small{grid-column:1/-1;font-size:11px;color:#adb7c6}
+.chart-finding #analysis-finding,.comparison-summary{font-size:13px!important;line-height:1.9!important;color:#e6eaf0;margin:0 0 16px!important;max-width:none!important}
+.chart-actions{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+body.workbench-v2 .chart-actions button{display:flex;align-items:center;justify-content:center;gap:6px;min-height:44px!important;flex:1;padding:8px!important;white-space:nowrap}
+.chart-actions svg{width:16px;height:16px}
+.chart-scope{display:block!important;padding:8px 0!important;margin:0!important;font-size:12px;color:#adb7c6;border:0!important;line-height:1.8}
+.chart-aside #analysis-chart-options{margin:8px 0;border-top:1px solid #2b3543}
+.chart-aside #analysis-chart-options .workbench-controls{display:grid;grid-template-columns:1fr 1fr;gap:12px;border:0}
+.chart-aside .workbench-controls label{min-width:0}.chart-aside .workbench-controls select{min-width:0!important;width:100%}
+.chart-provenance{border-top:1px solid #2b3543;padding-top:4px;margin-top:8px;color:#adb7c6;font-size:12px;line-height:1.8}
+.chart-provenance>summary{cursor:pointer;min-height:40px;align-content:center;color:#a5c8f7}
+.chart-provenance p{font-size:12px;line-height:1.8;margin:8px 0}
+.chart-provenance button{margin-right:12px}
+.chart-caption{font-size:12px!important;line-height:1.8;color:#adb7c6;margin:8px 0 0}
+body.market-canvas .v2-map-workspace{margin-top:16px;grid-template-columns:minmax(0,1fr) 280px}
+body.market-canvas .v2-map-area{min-height:calc(100dvh - 130px);height:calc(100dvh - 130px);max-height:900px}
+body.market-canvas #v2-map-canvas{height:calc(100% - 85px)!important;min-height:380px}
+.map-side-stats{display:block!important;margin:0 0 20px;padding:0!important;background:transparent!important;border:0!important}
+.map-side-stats>div{padding:8px 0!important;border:0!important;border-bottom:1px solid #2b3543!important}
+.map-side-stats strong{font-size:22px!important}.map-side-stats small{font-size:11px}
+body.market-canvas .cmo-page-heading p,body.market-canvas .cmo-heading p{display:none}
+body.market-canvas #decision-root>p.cmo-footnote{display:none}
+body.market-canvas .cmo-control-row{padding:8px 0!important;margin:0 0 12px}
+.comparison-stage{margin:8px 0 24px}
+.comparison-plot{min-width:0;background:#151b24;border:1px solid #2b3543;border-radius:8px;padding:16px}
+.comparison-plot header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.comparison-plot label{white-space:nowrap;flex-shrink:0;display:flex;align-items:center;gap:8px;color:#adb7c6;font-size:12px}
+#stage-compare-chart{height:calc(100dvh - 300px);min-height:380px;max-height:700px}
+.comparison-summary p{padding:8px 0;border-bottom:1px solid #2b3543}.comparison-summary strong,.comparison-summary span{display:block}.comparison-summary span{color:#adb7c6;font-size:12px}
+.chart-comparison-details>summary{min-height:44px;cursor:pointer;align-content:center;color:#a5c8f7}
+@media(max-width:1150px){body.market-canvas .market-stage{grid-template-columns:minmax(0,1fr) 240px;gap:16px}body.market-canvas .v2-map-workspace{grid-template-columns:minmax(0,1fr) 240px}.chart-view-picker select{max-width:145px}}
+@media(max-width:900px){
+ body.workbench-v2 .journey-home .journey-intro h1{font-size:clamp(24px,3.2vw,30px)!important}
+ body.market-canvas .market-stage{grid-template-columns:minmax(0,1fr)}
+ .chart-aside{padding:16px 0}
+ body.market-canvas .chart-aside .workbench-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+ body.market-canvas .chart-aside .workbench-stats>div{display:block}.chart-aside .workbench-stats dd{text-align:left!important}
+ body.market-canvas .v2-map-workspace{grid-template-columns:1fr}
+ body.market-canvas .v2-region{display:block!important;border-left:0;border-top:1px solid #2b3543}
+ .map-side-stats{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+}
+@media(max-width:700px){
+ body.workbench-v2 .journey-home .journey-intro h1{white-space:normal;font-size:26px!important;line-height:1.5!important}
+ body.market-canvas #global-scope{position:static}
+ body.market-canvas .workbench-tabs{gap:18px;margin-bottom:12px}
+ body.market-canvas .workbench-heading{min-height:44px}
+ body.market-canvas .workbench-heading h1{font-size:18px!important}
+ body.market-canvas .market-stage>.workbench-panel{padding:12px!important}
+ body.workbench-v2.market-canvas #explorer-chart.stage-chart{height:440px!important;min-height:440px!important;max-height:440px!important}
+ body.market-canvas .workbench-chart-frame{height:440px;min-height:440px}
+ .chart-view-picker{font-size:0!important;gap:0}.chart-view-picker select{max-width:135px;min-width:0!important}
+ body.market-canvas .workbench-panel-heading{flex-wrap:wrap}
+ body.market-canvas .v2-map-area{height:540px;min-height:540px}
+ body.market-canvas #v2-map-canvas{min-height:420px}
+ #stage-compare-chart{height:400px;min-height:400px}
+ .comparison-plot{padding:12px}
+}
+
+@media(max-width:700px){.journey-intro h1 span{display:inline-block}}
+/* Keep orientation and provenance available without reserving the main canvas. */
+body:not([data-view="methods"]) #data-status-summary,.journey-steps{display:none!important}
+.chart-reading,.map-reading p{font-size:13px;color:#adb7c6;line-height:1.85;margin:12px 0 18px}
+.map-reading h2{font-size:16px!important;margin:0 0 12px!important}
+.map-summary .v2-kpis{display:block!important;padding:0!important;margin:8px 0!important}
+.map-summary .v2-kpis>div{border:0!important;border-bottom:1px solid #2b3543!important;padding:8px 0!important}
+.map-summary .v2-kpis strong{font-size:18px!important}.map-summary .v2-kpis small{font-size:11px}
+body.market-canvas .v2-map-workspace{margin-top:0}
+body.workbench-v2 .journey-home{padding-top:48px}
+body.workbench-v2 .journey-start{max-width:820px;margin:32px 0 0;padding:24px 0 16px}
+.journey-start>label{display:block;margin-bottom:12px;color:#e6eaf0;font-size:16px}
+.journey-quick-start{display:flex;gap:12px;align-items:stretch}.journey-quick-start select{flex:1;min-width:0;min-height:48px;background:#10151d;color:#e6eaf0;border:1px solid #354151;border-radius:6px;padding:10px 12px;font-size:14px}
+.journey-quick-start>.primary{white-space:nowrap;min-height:48px;padding:10px 24px}
+.journey-optional{margin:16px 0 0}.journey-optional>summary,.ra-example-disclosure>summary{color:#a5c8f7;cursor:pointer;min-height:44px;align-content:center}
+.journey-optional .journey-fields{grid-template-columns:1fr 1fr;margin:12px 0 20px}.journey-optional .journey-remember{margin:12px 0}
+.journey-simple-links{display:flex;flex-wrap:wrap;gap:16px;margin:24px 0 32px}.journey-simple-links .button{background:transparent}
+.compare-mode-tabs{margin:8px 0 16px!important}.compare-mode-tabs button{min-height:44px;white-space:nowrap}.compare-mode-tabs [aria-pressed="true"]{color:#a5c8f7;border-bottom:2px solid #5797f5}.compare-selected-count{font-size:12px;color:#adb7c6;margin-left:4px}
+body.workbench-v2 .unified-compare>.decision-heading{margin:0;padding:8px 0;min-height:50px}.unified-compare>.decision-heading p{display:none}
+.compare-depth-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;padding:16px 0}
+.compare-depth-grid section{min-width:0}.compare-depth-grid h3{font-size:16px!important}.compare-depth-grid p{font-size:13px;line-height:1.9;overflow-wrap:anywhere}.compare-depth-grid .button{display:block;margin:8px 0;text-align:left;max-width:100%;white-space:normal}
+.compare-description{white-space:pre-wrap;max-height:400px;overflow:auto}.chart-aside>p{font-size:13px;line-height:1.9}
+.job-compare-picker{margin:0 0 16px;border-bottom:1px solid #2b3543;padding-bottom:12px}.job-compare-tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.job-compare-tools input{min-height:44px;flex:1;min-width:180px;max-width:460px}.job-compare-tools>span{color:#adb7c6;font-size:12px}.compare-job-selected{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.compare-job-selected:empty{display:none}.compare-job-selected .button{max-width:100%;overflow-wrap:anywhere;white-space:normal}
+.compare-job-list>summary{min-height:44px;align-content:center;color:#a5c8f7;cursor:pointer}.compare-job-list table th small{display:block;font-weight:400;color:#adb7c6;margin-top:6px}.compare-job-list input[type="checkbox"]{width:20px;height:20px;cursor:pointer}.compare-job-list td:first-child{min-width:80px}.compare-job-pagination{display:flex;justify-content:flex-end;align-items:center;gap:16px;margin:12px 0}
+#job-range-chart{height:380px;min-height:300px}.job-detail-table{margin:24px 0}.job-detail-table table{min-width:680px}.job-detail-table td{max-width:340px;white-space:normal;overflow-wrap:anywhere}
+/* A single conversation, with all supporting tools explicitly expandable. */
+.ra-shell .ra-workspace{display:block!important}.ra-controls{border:0!important;padding:0!important;margin-bottom:16px}
+#ra-tools-disclosure>summary{display:list-item!important;color:#a5c8f7;cursor:pointer;min-height:44px;align-content:center}
+#ra-tools-disclosure{border-bottom:1px solid #2b3543;padding-bottom:4px}.ra-tools-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;padding:16px 0}
+.ra-settings{padding-top:0;border-top:0}.ra-shell .ra-header p{display:none}.ra-shell>.ra-header{margin-bottom:8px;padding-bottom:12px}
+.ra-shell .ra-workspace .ra-conversation{height:calc(100dvh - 220px);min-height:500px;max-height:800px;max-width:980px;margin:auto}
+.ra-chat-heading{padding-bottom:12px}.ra-shell .ra-workspace .ra-empty{padding:24px 0 12px}.ra-shell .ra-workspace .ra-empty>p{font-size:14px}.ra-example-disclosure .ra-example-label{margin:8px 0!important}.ra-shell .ra-workspace .ra-examples{margin-bottom:8px}.ra-example-disclosure{max-width:700px}
+@media(max-width:850px){body.workbench-v2 .journey-home{padding-top:24px}.ra-tools-body{grid-template-columns:1fr;gap:20px}.ra-settings{border-top:1px solid #354151;padding-top:12px}.job-compare-tools label{width:100%}.compare-mode-tabs{overflow-x:auto;flex-wrap:nowrap;gap:20px!important}.compare-mode-tabs button{flex-shrink:0}.compare-depth-grid{grid-template-columns:1fr}.ra-shell .ra-workspace .ra-conversation{min-height:500px;height:calc(100dvh - 240px)}}
+@media(max-width:700px){.journey-quick-start{flex-direction:column}.journey-optional .journey-fields{grid-template-columns:1fr}.journey-simple-links{gap:8px}.comparison-plot .workbench-panel-heading{flex-wrap:wrap}.comparison-plot label{max-width:100%}.comparison-plot select{max-width:180px}#job-range-chart{height:320px}.job-compare-picker .table-scroll{max-height:420px;overflow:auto}.compare-job-selected .button{font-size:12px}.chart-aside .workbench-stats small{overflow-wrap:anywhere}}
+.compare-object-chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.compare-object-chips .button{min-height:36px}
+.archive-chart-reading{display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:16px;align-items:center}.archive-chart-reading>div{min-width:0}@media(max-width:900px){.archive-chart-reading{grid-template-columns:1fr}}
+/* Compact comparison controls; orientation remains in navigation. */
+body[data-view="compare"] #decision-root>.decision-heading,body[data-view="compare"] #decision-root>.workbench-heading{display:none!important}
+body[data-view="compare"] .compare-mode-tabs{margin-top:0!important}
+body[data-view="compare"] .cmo-control-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px;border:0!important;padding:0 0 12px!important}
+body[data-view="compare"] .cmo-control-row label{margin:0;min-width:0}.cmo-control-row .compare-object-chips{flex:1}
+body[data-view="jobs"] #compare-open{display:none!important}
+#evidence-compare-bar{position:sticky;top:62px;z-index:30;background:#151b24;border:1px solid #354151;border-radius:6px;padding:12px 16px;display:flex;gap:12px 20px;align-items:center;flex-wrap:wrap;margin:0 0 16px}
+.evidence-compare-intro{display:flex;gap:10px;align-items:center;flex:1;flex-wrap:wrap}.evidence-compare-intro svg{color:#83b3f7;flex-shrink:0}.evidence-compare-intro strong{font-size:16px;white-space:nowrap}.evidence-compare-intro span{color:#adb7c6;font-size:12px}.evidence-compare-actions{display:flex;gap:12px;align-items:center}.evidence-compare-actions button{min-height:44px}
+.evidence-selected{display:flex;flex-basis:100%;flex-wrap:wrap;gap:8px}.evidence-selected .button{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+body[data-view="jobs"] .evidence-pick{display:flex;gap:8px;align-items:center;justify-content:center;min-height:44px;min-width:104px;padding:6px 10px;border:1px solid #354151;border-radius:6px;cursor:pointer;color:#a5c8f7;background:#1c2430;white-space:nowrap}.evidence-pick.selected{background:#203552!important;border-color:#5797f5!important}.evidence-pick input{width:18px;height:18px;cursor:pointer;flex-shrink:0}
+/* Independent tools; long answers use page scrolling and the available width. */
+body[data-view="assistant"] .ra-shell{max-width:none!important;width:100%;padding-left:0!important;padding-right:0!important}
+.ra-shell .ra-controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-bottom:16px}
+.ra-controls>details{min-width:0;border-top:0!important;border-bottom:1px solid #354151;padding:0!important}
+.ra-controls>details>summary{display:list-item;min-height:44px;align-content:center;cursor:pointer;color:#a5c8f7}
+.ra-history-body,.ra-controls .ra-settings-body{padding:12px 0;max-height:460px;overflow:auto;scrollbar-color:#354151 #0c1017}
+.ra-shell .ra-controls .ra-history h2{display:none!important}
+body[data-view="assistant"] .ra-workspace .ra-conversation{width:100%;max-width:none!important;margin:0!important;height:auto!important;min-height:0!important;max-height:none!important}
+body[data-view="assistant"] .ra-workspace .ra-messages{flex:none!important;overflow:visible!important;max-height:none!important;min-height:0!important;padding:0!important}
+body[data-view="assistant"] .ra-workspace .ra-answer{font-size:15px;line-height:1.9;max-width:none}
+body[data-view="assistant"] .ra-workspace .ra-message.user{margin-left:0;padding:12px 16px}
+body[data-view="assistant"] .ra-chat-heading{align-items:center;padding-bottom:12px}.ra-chat-heading h2{font-size:16px!important}
+body[data-view="assistant"] .ra-workspace .ra-empty{min-height:220px;padding:24px 0}
+body[data-view="assistant"] .ra-workspace #ra-form{position:static!important;margin-top:16px;min-height:0}
+.ra-evidence-disclosure{clear:both;margin-top:24px!important}.ra-evidence-disclosure .ra-evidence{max-width:none;width:100%;padding:16px 0!important}
+@media(max-width:850px){#evidence-compare-bar{top:60px;padding:12px;gap:10px}.evidence-compare-intro{flex-basis:100%}.evidence-compare-actions{width:100%}.evidence-compare-actions>.primary{flex:1}.ra-shell .ra-controls{gap:12px}.ra-history-body,.ra-controls .ra-settings-body{max-height:360px}.ra-controls>details[open]{grid-column:1/-1}.ra-shell .ra-chat-actions{max-width:60%}.ra-shell .ra-workspace .ra-answer{font-size:14px!important}.cmo-control-row select{min-width:160px!important;max-width:100%}}
+@media(max-width:760px){body[data-view="jobs"] .jobs-table tr{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 35px!important}body[data-view="jobs"] .jobs-table td:nth-child(1){grid-column:1/3;grid-row:1}body[data-view="jobs"] .jobs-table td:nth-child(2){grid-column:1/3;grid-row:2}body[data-view="jobs"] .jobs-table td:nth-child(3){grid-column:1;grid-row:3}body[data-view="jobs"] .jobs-table td:nth-child(4){grid-column:2;grid-row:3}body[data-view="jobs"] .jobs-table td:nth-child(5){grid-column:1;grid-row:4}body[data-view="jobs"] .jobs-table td:nth-child(6){grid-column:2;grid-row:4}body[data-view="jobs"] .jobs-table td:nth-child(7){grid-column:3;grid-row:1}.evidence-pick{width:fit-content}.evidence-pick input{margin:0!important}}
+body[data-view="jobs"] #analysis .jobs-panel{overflow:visible!important}
+body[data-view="jobs"] .jobs-table .job-name{color:#a5c8f7!important}body[data-view="jobs"] .jobs-table .job-name:hover{color:#e6eaf0!important}body[data-view="jobs"] .jobs-table .job-sub{color:#adb7c6!important}body[data-view="jobs"] .jobs-table td:before{color:#adb7c6!important}#evidence-compare-bar button{min-height:44px!important}.evidence-pick:focus-within{outline:2px solid #83b3f7;outline-offset:2px}
+/* Chat workspace: the site sidebar also owns the conversation list. */
+body[data-view="assistant"]{overflow:hidden}
+body[data-view="assistant"] .workspace{height:100dvh;overflow:hidden}
+body.workbench-v2[data-view="assistant"] main{height:100dvh;padding:0 24px!important;display:flex;flex-direction:column;min-height:0}
+body[data-view="assistant"] #decision-root{flex:1;min-height:0;display:flex;flex-direction:column}
+body[data-view="assistant"] .workspace footer{display:none!important}
+body[data-view="assistant"] .ra-shell{height:100%;min-height:0;display:flex;flex-direction:column;padding:0!important;margin:0;width:100%}
+body[data-view="assistant"] .ra-shell>.ra-header{flex-shrink:0;min-height:68px;padding:10px 0!important;margin:0!important;gap:12px;position:relative;z-index:40;flex-wrap:nowrap}
+body[data-view="assistant"] .ra-header>div:first-of-type{min-width:0;flex:1}
+body[data-view="assistant"] .ra-header h1{font-size:16px!important;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;margin:0!important;max-width:100%}
+body[data-view="assistant"] .ra-header #ra-new{display:none}
+body[data-view="assistant"] .ra-header .ra-chat-actions{display:flex;max-width:none;flex-wrap:nowrap;gap:8px;margin:0}
+.ra-chat-actions button{white-space:nowrap;min-height:38px}
+body[data-view="assistant"] .ra-chat-settings{position:relative;border:0;padding:0!important;flex-shrink:0;margin:0}
+.ra-chat-settings>summary{min-height:38px;white-space:nowrap;padding:8px;color:#a5c8f7;cursor:pointer}
+.ra-chat-settings>.ra-settings-body{position:absolute;right:0;top:100%;width:340px;max-width:calc(100vw - 32px);max-height:75dvh;overflow:auto;background:#151b24;border:1px solid #354151;border-radius:6px;padding:16px;z-index:80}
+.ra-chat-settings .ra-engine,.ra-chat-settings .ra-scope{padding:0!important;margin:0 0 16px!important;border:0;background:transparent}
+.ra-chat-settings select{width:100%;max-width:100%;display:block}.ra-chat-settings .ra-service{font-size:12px}.ra-chat-settings .ra-service details{width:100%}
+body[data-view="assistant"] .ra-workspace{display:flex!important;flex:1;flex-direction:column;min-height:0;height:auto}
+body[data-view="assistant"] .ra-workspace .ra-layout,body[data-view="assistant"] .ra-workspace .ra-conversation{display:flex!important;flex-direction:column;flex:1;min-height:0!important;height:100%!important;max-height:none!important;width:100%;margin:0!important;gap:0}
+body[data-view="assistant"] .ra-workspace .ra-messages{flex:1!important;min-height:0!important;max-height:none!important;overflow:auto!important;padding:16px 8px 8px 0!important;overscroll-behavior:contain}
+body[data-view="assistant"] .ra-workspace .ra-message{margin:8px 0 16px!important;padding:16px 0}
+body[data-view="assistant"] .ra-workspace .ra-message.user{margin-left:auto!important;max-width:85%;padding:12px 16px}
+body[data-view="assistant"] .ra-workspace .ra-answer{font-size:15px;line-height:1.9;max-width:none}
+body[data-view="assistant"] .ra-workspace .ra-followups{padding:4px 0;min-height:36px}
+body[data-view="assistant"] .ra-workspace #ra-form{flex-shrink:0;position:static!important;margin:8px 0 12px!important;padding:12px!important}
+body[data-view="assistant"] .ra-workspace #ra-form>label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+body[data-view="assistant"] .ra-workspace #ra-input{height:64px;min-height:64px;max-height:140px}
+body[data-view="assistant"] .ra-composer-actions{margin-top:8px!important}.ra-context-note{margin:4px 0!important;padding:6px 0}
+body[data-view="assistant"] .ra-workspace .ra-empty{min-height:0!important;max-width:720px;margin:auto;padding:clamp(24px,8vh,80px) 0!important}
+body[data-view="assistant"] .sidebar{display:flex;flex-direction:column;overflow:hidden}
+body[data-view="assistant"] #navigation{flex-shrink:0}
+body[data-view="assistant"] .v2-nav{gap:2px}
+body[data-view="assistant"] .v2-nav>button{min-height:34px!important;padding-top:6px!important;padding-bottom:6px!important}
+#assistant-history-dock{flex:1;min-height:0;overflow:auto;margin:12px 0 0;border-top:1px solid #354151;padding:12px 0;scrollbar-width:thin;scrollbar-color:#354151 #151b24}
+#assistant-history-dock .ra-history{position:static!important;width:100%!important;max-height:none!important;background:transparent!important;padding:0!important;border:0!important;margin:0!important}
+#assistant-history-dock .ra-history h2{display:none!important}#assistant-history-dock #ra-history-new{width:100%;min-height:40px;margin-bottom:12px;color:#a5c8f7;background:#203552;border-color:#354f73}
+#assistant-history-dock .ra-history-tabs{display:flex;gap:8px;margin:0 0 10px;flex-wrap:wrap}#assistant-history-dock .ra-history-tabs button{min-height:32px;padding:4px;font-size:12px}
+#assistant-history-dock .ra-history>label{display:none}#assistant-history-dock #ra-history-search{width:100%;min-height:36px;margin:0 0 10px;font-size:12px}
+#assistant-history-dock .ra-thread{border:0;border-radius:6px;margin:4px 0;padding:4px 6px;background:transparent}
+#assistant-history-dock .ra-thread.active{background:#203552}
+#assistant-history-dock .ra-thread-open{min-height:40px;max-width:100%;width:100%;padding:6px 0;font-size:12px;line-height:1.6;white-space:normal;overflow-wrap:anywhere;color:#e6eaf0;text-align:left}
+#assistant-history-dock .ra-thread-open small{display:block;font-size:10px!important;color:#adb7c6}
+.ra-thread-menu>summary{cursor:pointer;color:#a5c8f7;font-size:11px;min-height:28px;align-content:center}
+#assistant-history-dock .ra-thread-actions{display:flex;flex-wrap:wrap;gap:4px}#assistant-history-dock .ra-thread-actions button{min-height:32px;font-size:11px;padding:4px}
+#assistant-history-dock #ra-storage-status{font-size:10px;line-height:1.7;color:#adb7c6;margin:16px 0 0}
+body[data-view="assistant"] .side-bottom{position:static!important;flex-shrink:0;margin-top:0}
+body[data-view="assistant"] .side-bottom button:not(#help){display:none!important}body[data-view="assistant"] .v2-local{display:none}
+.ra-conversations-toggle{display:none!important}
+#ra-evidence-panel{position:fixed;inset:0 0 0 auto;width:min(460px,45vw);max-width:100vw;background:#10151d;border-left:1px solid #354151;z-index:90;display:flex;flex-direction:column;color:#e6eaf0;box-shadow:-12px 0 32px #0004}
+#ra-evidence-panel[hidden]{display:none!important}#ra-evidence-panel>header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px;border-bottom:1px solid #354151;flex-shrink:0}#ra-evidence-panel h2{font-size:16px!important;margin:0}#ra-evidence-panel>header button{min-height:44px}
+.ra-evidence-scroll{flex:1;min-height:0;overflow:auto;padding:0 16px;overscroll-behavior:contain;scrollbar-color:#354151 #10151d}
+#ra-evidence-panel .ra-evidence{display:block!important;border:0;background:transparent;padding:16px 0!important;width:100%;min-width:0}#ra-evidence-panel .ra-evidence>header{display:none}#ra-evidence-panel .ra-result{scroll-margin:0}.ra-ref{scroll-margin:0}
+@media(max-width:1000px){.ra-chat-actions button{font-size:12px!important;padding:6px}.ra-chat-settings>summary{font-size:12px}.ra-header{gap:8px!important}}
+@media(max-width:850px){body.workbench-v2[data-view="assistant"] main{padding:0 16px!important}body[data-view="assistant"] #journey-mobile-nav{flex-shrink:0;margin:0;height:60px;min-height:60px}body[data-view="assistant"] #decision-root{flex:1;min-height:0}body[data-view="assistant"] .ra-shell>.ra-header{min-height:56px;flex-wrap:wrap;padding:8px 0!important;gap:6px}body[data-view="assistant"] .ra-header>div:first-of-type{flex:1;max-width:calc(100% - 140px)}body[data-view="assistant"] .ra-header h1{font-size:14px!important}.ra-conversations-toggle{display:flex!important;align-items:center;gap:6px;min-height:36px;padding:6px}.ra-conversations-toggle span{display:none}body[data-view="assistant"] .ra-header .ra-chat-actions{width:100%;justify-content:flex-end;margin:0}.ra-chat-actions:empty{display:none!important}.ra-header .ra-chat-settings{margin-left:auto}body[data-view="assistant"] .ra-workspace .ra-answer{font-size:14px}body[data-view="assistant"] .ra-workspace #ra-form{margin-bottom:8px!important;padding:10px!important}body[data-view="assistant"] .ra-workspace #ra-input{min-height:56px;height:56px}.ra-composer-actions small{font-size:10px!important}#ra-evidence-panel{width:100vw}.ra-chat-settings>.ra-settings-body{right:0;width:320px;max-height:60dvh}body[data-view="assistant"] .sidebar.open{overflow:hidden}}
+.ra-history-mobile-head{display:none}@media(max-width:850px){body[data-view="assistant"] .ra-header>div:first-of-type{flex:1 1 100px!important;max-width:none!important}body[data-view="assistant"] .ra-header .ra-chat-actions{flex:0 0 100%!important;width:100%!important;max-width:100%!important;justify-content:flex-end}.ra-history-mobile-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;color:#adb7c6}.ra-history-mobile-head button{min-height:40px}}

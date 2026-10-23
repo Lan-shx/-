@@ -1,0 +1,17 @@
+import {chromium} from './qa-tools/node_modules/playwright/index.mjs';
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'}),page=await browser.newPage({viewport:{width:1440,height:1000},acceptDownloads:true});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+try{
+ await page.goto('http://127.0.0.1:8765');await page.waitForSelector('#v2-map-points circle',{timeout:120000});
+ await page.evaluate(()=>setModule('S04'));await page.waitForSelector('#explorer-chart svg');assert.equal(await page.locator('[data-metric]').count(),6);
+ await page.locator('[data-metric="salary"]').click();await page.locator('#explorer-change').click();
+ for(const v of ['box','distribution','cdf','heat','bubble','bar']){await page.locator('#explorer-view').selectOption(v);await page.waitForSelector('#explorer-chart svg');assert.equal(await page.evaluate(()=>explorer.view),v);}console.log('PASS all six retained salary views');
+ await page.evaluate(()=>goJourney('discover'));await page.locator('[data-direction-toggle]').first().click();assert.equal(await page.evaluate(()=>directionIDs.size),1);await page.locator('[data-v2-route="compare"]').first().click();assert.equal(await page.locator('.cmo-compare-table thead th').count(),2);console.log('PASS career comparison retains original comparison structure');
+ await page.evaluate(()=>goJourney('jobs'));await page.locator('#job-rows input[data-compare]').nth(0).check();await page.locator('#job-rows input[data-compare]').nth(1).check();await page.locator('#compare-open').click();assert.equal(await page.locator('.compare-card').count(),2);await page.locator('#info-dialog .close-dialog').click();console.log('PASS real-job comparison retained');
+ await page.evaluate(()=>goJourney('map'));const original=await page.evaluate(()=>rows.length);const offline=page.waitForEvent('download',{timeout:120000});await page.evaluate(()=>exportOffline());const file=await offline;await file.saveAs('qa-downloads/qa-v2-offline.html');
+ const offlinePage=await browser.newPage();offlinePage.on('pageerror',e=>errors.push(e.message));await offlinePage.goto('file:///'+process.cwd().replaceAll('\\','/')+'/qa-downloads/qa-v2-offline.html');await offlinePage.waitForSelector('#v2-map-points circle',{timeout:120000});assert.equal(await offlinePage.evaluate(()=>rows.length),original);assert.equal(await offlinePage.locator('[data-v2-filter]').count(),6);await offlinePage.close();console.log('PASS complete V2 offline export loads embedded data and map');
+ const csv='岗位,公司,城市,原始链接,薪资原文,月薪下限,月薪上限,经验要求,学历,行业,更新日期\nV2测试岗位,V2测试公司,北京,https://example.com/v2-import,10000–20000元/月,10000,20000,经验不限,本科,测试行业,2026-10-07\n';
+ await page.evaluate(async text=>importCSV(new File([text],'v2.csv',{type:'text/csv'})),csv);assert.equal(await page.evaluate(()=>rows.length),1);assert.equal(await page.evaluate(()=>exploreStats('',rows).p50),null);await page.waitForSelector('#v2-map-points circle');console.log('PASS CSV session import, data remains historical and low-n salary null');
+ assert.deepEqual(errors,[]);await fs.writeFile('qa-v2-retained-results.json',JSON.stringify({passed:true,errors,checks:['six legacy chart views','unified career compare','real-job compare','offline export/load','session CSV import']},null,2));
+}finally{await browser.close()}
