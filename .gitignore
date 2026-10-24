@@ -25,3 +25,6 @@ dist/
 .dev.vars*
 .next/
 *.tsbuildinfo
+
+# Generated Makers artifacts; source and secrets stay outside the public output.
+makers/runtime/
