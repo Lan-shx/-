@@ -1,6 +1,6 @@
 # 职业观测站：腾讯云 Makers 部署
 
-本目录是职业观测站的独立 Makers 入口。保留 Sites 第 28 版前端及完整的 69,465 条历史招聘样本；不更新采集日期或更换数据。源码仓库为 `Lan-shx/-`，不使用 `resume-radar`。
+本目录是职业观测站的独立 Makers 入口。保留 Sites 第 28 版前端及完整的 69,465 条历史招聘样本；不更新采集日期或更换数据。源码仓库为 `Lan-shx/career-market-observatory`，不使用 `resume-radar`。
 
 ## 当前进度与限制
 
@@ -19,7 +19,7 @@
 
 | 设置 | 填写内容 |
 | --- | --- |
-| GitHub 仓库 | `Lan-shx/-` |
+| GitHub 仓库 | `Lan-shx/career-market-observatory` |
 | 分支 | `main` |
 | 项目根目录 | `makers` |
 | 框架 | `Other` 或其他/自定义，不选 Next.js |
