@@ -1,5 +1,16 @@
 # 职场观测站 · 职业决策与市场证据
 
+## 项目概览与研究助手
+
+职业观测站是基于 69,465 条历史招聘记录的职业市场研究工作台，提供岗位、城市、薪资和要求的筛选与比较。统计反映历史样本，不代表全市场或实时招聘。
+
+- 在线站点：[职业观测站](https://career-market-observatory.shx7962.chatgpt.site/)。
+- 研究助手支持站内规则查询、条件继承、岗位来源与可追溯的统计；模型模式通过服务端调用 DeepSeek，只读查询并输出依据卡。
+- 研究助手代码位于 [前端](public/research-assistant.js)、[服务端](lib/research-server.mjs) 和 [接口](app/api/research/%5Baction%5D/route.ts)，设计与限制见 [研究助手说明](RESEARCH-ASSISTANT.md)。
+- 模型对话需要部署服务端并配置相应数据库与密钥；仅用静态文件预览不能提供模型接口。详见 [Makers 部署说明](makers/README.md)。模型输出须结合依据核对。
+- 本仓库前端在模型服务可用时默认选用模型；未配置时使用本地规则查询，用户可自行切换。更新仓库不会自动更新在线站点。
+
+
 ## 腾讯云 Makers 部署入口
 
 职业观测站源码现存于 [Lan-shx/-](https://github.com/Lan-shx/-)。Makers 导入时使用 `main` 分支，项目根目录填写 `makers`，不要直接构建仓库顶层的 Sites/Vinext 项目。
@@ -85,9 +96,9 @@
 
 岗位详情、收藏、最多3条对比、CSV/SVG/打印PDF/离线HTML/JSON配置导出保留。离线HTML内置图表引擎、样式、脚本和真实数据。导入CSV只替换浏览器当前会话，刷新恢复本站数据。
 
-## 运行与验证
+## 早期静态版本运行与验证
 
-纯静态站点，无构建或服务端依赖：
+以下为历史静态版本的验证方式；研究助手模型接口需要服务端和对应配置：
 
 ```powershell
 python -m http.server 8765 --bind 127.0.0.1 --directory dist
